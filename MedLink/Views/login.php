@@ -25,7 +25,7 @@ session_start();
 
       <h2>Sign In to Your Account</h2>
 
-      <form id="patientLoginForm">
+      <form id="patientLoginForm" action="../Controllers/loginCheck.php" method="post" enctype="">
         <div class="input-group">
           <label for="email">Email or Patient ID</label>
           <div class="input-field">
@@ -53,7 +53,7 @@ session_start();
           <a href="#" class="forgot-password">Forgot Password?</a>
         </div>
 
-        <button type="submit" class="btn-login">
+        <button type="submit" name="submit" class="btn-login">
           <i class="fas fa-sign-in-alt"></i> Login
         </button>
       </form>
