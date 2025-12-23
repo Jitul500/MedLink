@@ -13,13 +13,17 @@ table {
 table, th, td { 
     border: 1px solid #333; 
 }
+
 th, td { 
     padding: 10px; 
 }
+
 input, button { 
     padding: 5px; 
     margin: 5px 0;
  }
+
 a { 
     margin-right: 10px; 
 }
+
