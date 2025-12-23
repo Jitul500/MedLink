@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Book Appointment</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f7fb;
+        }
+
+        header {
+            background: #0d6efd;
+            color: white;
+            padding: 15px;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: 30px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #0d6efd;
+        }
+
+        label {
+            display: block;
+            margin-top: 12px;
+            font-weight: bold;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+        }
+
+        button {
+            margin-top: 20px;
+            width: 100%;
+            padding: 10px;
+            background: #0d6efd;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .success {
+            margin-top: 15px;
+            color: green;
+            text-align: center;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h2>Appointment Booking</h2>
+</header>
+
+<div class="container">
+    <h2>Confirm Appointment</h2>
+
+    <p><strong>Doctor:</strong> <span id="docName"></span></p>
+    <p><strong>Specialty:</strong> <span id="docSpecialty"></span></p>
+    <p><strong>Fee:</strong> ৳<span id="docFee"></span></p>
+
+    <form id="bookingForm">
+        <label>Patient Name</label>
+        <input type="text" required>
+
+        <label>Phone Number</label>
+        <input type="tel" required>
+
+        <label>Appointment Date</label>
+        <input type="date" required>
+
+        <label>Time Slot</label>
+        <select required>
+            <option value="">Select</option>
+            <option>10:00 – 11:00</option>
+            <option>11:00 – 12:00</option>
+            <option>02:00 – 03:00</option>
+        </select>
+
+        <button type="submit">Confirm Booking</button>
+    </form>
+
+    <div class="success" id="successMsg"></div>
+</div>
+
+<script>
+    const params = new URLSearchParams(window.location.search);
+
+    document.getElementById("docName").textContent = params.get("name");
+    document.getElementById("docSpecialty").textContent = params.get("specialty");
+    document.getElementById("docFee").textContent = params.get("fee");
+
+    document.getElementById("bookingForm").addEventListener("submit", function(e) {
+        e.preventDefault();
+        document.getElementById("successMsg").innerText =
+            "Appointment booked successfully!";
+    });
+</script>
+
+</body>
+</html>
