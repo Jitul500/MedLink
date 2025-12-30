@@ -30,7 +30,7 @@ session_start();
           <label for="email">Email or Patient ID</label>
           <div class="input-field">
             <i class="fas fa-user"></i>
-            <input type="text" id="email" placeholder="Enter your email or ID" required>
+            <input type="text" id="email" name="username" placeholder="Enter your email or ID" required>
           </div>
         </div>
 
@@ -38,7 +38,7 @@ session_start();
           <label for="password">Password</label>
           <div class="input-field">
             <i class="fas fa-lock"></i>
-            <input type="password" id="password" placeholder="Enter your password" required>
+            <input type="password" id="password" name="password" placeholder="Enter your password" required>
             <span class="toggle-password" onclick="togglePasswordVisibility()">
               <i class="fas fa-eye" id="toggleIcon"></i>
             </span>
@@ -47,7 +47,7 @@ session_start();
 
         <div class="actions">
           <div class="remember-me">
-            <input type="checkbox" id="remember">
+            <input type="checkbox" id="remember" name="remember" value="true">
             <label for="remember">Remember Me</label>
           </div>
           <a href="#" class="forgot-password">Forgot Password?</a>
@@ -59,11 +59,11 @@ session_start();
       </form>
 
       <div class="signup-link">
-        Don't have an account? <a href="#">Sign Up Here</a>
+        Don't have an account? <a href="patient-register.php">Sign Up Here</a>
       </div>
 
       <div class="admin-link">
-        <a href="#">Are you a Doctor or Admin?</a>
+        <a href="doctor-admin-login.php">Are you a Doctor or Admin?</a>
       </div>
     </div>
   </div>

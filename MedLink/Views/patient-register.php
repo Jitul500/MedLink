@@ -5,8 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MedLink Patient Registration</title>
-  <link rel="stylesheet" href="css/register-style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="../Assets/register-style.css">
+  
 </head>
 
 <body>
@@ -110,12 +110,12 @@
       </form>
 
       <div class="login-link">
-        Already have an account? <a href="#">Login Here</a>
+        Already have an account? <a href="login.php">Login Here</a>
       </div>
     </div>
   </div>
 
-  <script src="js/register-script.js"></script>
+  <script src="../Assets/register-script.js"></script>
 </body>
 
 </html>

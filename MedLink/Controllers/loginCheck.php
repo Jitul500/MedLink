@@ -4,28 +4,33 @@ if(isset(($_POST['submit']))) {
     $username = $_POST['username'];
     $password = $_POST['password'];
 
+    $remember = isset($_POST['remember']);
     // Dummy credentials for demonstration
     $valid_username = "user";
     $valid_password = "pass";
 
-    if($username == "null" || $password == "null") {
+    if($username == "null" || $password == "") {
         echo "Username or Password cannot be null.";
     } else {
-        if($username == $valid_username) {
-    }
-
-    if($username === $valid_username && $password === $valid_password) {
+        if($username === $valid_username && $password === $valid_password) {
         $_SESSION['loggedin'] = true;
         $_SESSION['username'] = $username;
-        header("Location: ../index.php");
+        if($remember) {
+                setcookie('status', 'true', time() + 3000, '/');
+            }
+        header("Location: ../Views/test.php");
         exit();
-    } else {
-        $_SESSION['error'] = "Invalid username or password.";
+        }else {
+
+            echo "Invalid username or password.";
+        }
+    } 
+
+    }else{
         header("Location: ../Views/login.php");
         exit();
+        
     }
-} else {
-    header("Location: ../Views/login.php");
-    exit();
-}
+ 
+
 ?>

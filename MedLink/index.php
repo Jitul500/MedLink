@@ -1,121 +1,66 @@
-<?php
-// index.php - Main landing page for MedLink Smart Healthcare System
-?>
-
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MedLink - Smart Healthcare System</title>
-  <link rel="stylesheet" href="Assets/style.css">
-  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MedLink - Home</title>
+    <link rel="stylesheet" href="Assets/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
-
 <body>
 
-  <header class="navbar">
-    <div class="container">
-      <div class="logo">
-        <a href="#">
-          **MEDLINK**
-          <span class="tagline">SMART HEALTHCARE SYSTEM</span>
-        </a>
-      </div>
-      <nav class="nav-links">
-        <a href="#">Home</a>
-        <a href="#">Features</a>
-        <a href="#">Solutions</a>
-        <a href="#">About Us</a>
-        <a href="#">Contact</a>
-        <a href="Views/login.php" class="btn-login">Login/Sign-Up</a>
-      </nav>
-      <div class="menu-icon" id="menu-toggle">
-        <i class="fas fa-bars"></i>
-      </div>
-    </div>
-  </header>
-
-  <section class="hero-section">
-    <div class="container">
-      <div class="hero-content">
-        <h1>Transforming Health. Connecting Care.</h1>
-        <p>Seamless access to your health data, anytime, anywhere.</p>
-        <div class="hero-buttons">
-          <a href="#" class="btn-primary">Learn More</a>
-          <a href="#" class="btn-secondary">Get Started</a>
+    <header class="navbar">
+        <div class="container">
+            <div class="logo">MEDLINK</div>
+            <nav>
+                <a href="Views/login.php" class="btn-login">Login</a>
+            </nav>
         </div>
-      </div>
-      <div class="hero-image">
-        <img src="placeholder-hero.jpg" alt="A doctor consulting with a patient">
-      </div>
-    </div>
-  </section>
+    </header>
 
-  <section class="features-section">
-    <div class="container">
-      <h2>TESTIMONIALS & KEY FEATURES</h2>
-      <div class="feature-grid">
-
-        <div class="feature-card">
-          <div class="icon-circle"><i class="fas fa-heartbeat"></i></div>
-          <h3>PERSONALIZED HEALTH</h3>
-          <p>Tailored health insights & preventative care plans.</p>
-          <div class="testimonial">
-            <img src="placeholder-user1.jpg" alt="User 1" class="user-avatar">
-            <p>"Medlink changed how I manage health. So easy!"</p>
-            <span class="user-name">- Sarah K.</span>
-          </div>
+    <section class="hero-section">
+        <div class="container">
+            <h1>Welcome to MedLink</h1>
+            <p>Your secure health management system.</p>
+            <br>
+            <a href="Views/login.php" class="btn-main">Get Started</a>
+            
+            <div class="hero-icon">
+                <i class="fas fa-user-md"></i>
+            </div>
         </div>
+    </section>
 
-        <div class="feature-card">
-          <div class="icon-circle"><i class="fas fa-shield-alt"></i></div>
-          <h3>SECURE DATA</h3>
-          <p>Your health information protected with advanced encryption.</p>
-          <div class="testimonial">
-            <img src="placeholder-user2.jpg" alt="User 2" class="user-avatar">
-            <p>"Finally all my family's health records in one place."</p>
-            <span class="user-name">- Mark</span>
-          </div>
+    <section class="features-section">
+        <div class="container">
+            <h2>Our Features</h2>
+            <div class="feature-row">
+                
+                <div class="feature-box">
+                    <i class="fas fa-notes-medical"></i>
+                    <h3>Digital Records</h3>
+                    <p>Keep your health data safe.</p>
+                </div>
+
+                <div class="feature-box">
+                    <i class="fas fa-user-shield"></i>
+                    <h3>Secure Data</h3>
+                    <p>100% Privacy protection.</p>
+                </div>
+
+                <div class="feature-box">
+                    <i class="fas fa-desktop"></i>
+                    <h3>Remote Access</h3>
+                    <p>Access from anywhere.</p>
+                </div>
+
+            </div>
         </div>
+    </section>
 
-        <div class="feature-card">
-          <div class="icon-circle"><i class="fas fa-cloud"></i></div>
-          <h3>REMOTE MONITORING</h3>
-          <p>Connect with doctors & track & view from home.</p>
-          <div class="testimonial">
-            <img src="placeholder-user3.jpg" alt="User 3" class="user-avatar">
-            <p>"My doctor always informed, thanks MedLink."</p>
-            <span class="user-name">- Dr. Lee</span>
-          </div>
-        </div>
+    <footer>
+        <p>&copy; 2025 MedLink. All rights reserved.</p>
+    </footer>
 
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    <div class="container footer-content">
-      <div class="footer-logo">
-        **MEDLINK**
-        <span class="tagline">SMART HEALTHCARE SYSTEM</span>
-      </div>
-      <div class="footer-links">
-        <a href="#">Privacy Policy</a>
-        <a href="#">Terms of Service</a>
-        <a href="#">FAQS</a>
-      </div>
-      <div class="social-icons">
-        <a href="#"><i class="fab fa-facebook-f"></i></a>
-        <a href="#"><i class="fab fa-twitter"></i></a>
-        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-      </div>
-      <p class="copyright">&copy; 2023 MEDLINK. All rights reserved.</p>
-    </div>
-  </footer>
-
-  <script src="js/script.js"></script>
 </body>
-
 </html>

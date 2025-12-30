@@ -59,12 +59,12 @@
       </div>
 
       <div class="patient-link">
-        <a href="#">Looking for Patient Login?</a>
+        <a href="login.php">Looking for Patient Login?</a>
       </div>
     </div>
   </div>
 
-  <script src="js/doctor-admin-script.js"></script>
+  <script src="../Assets/doctor-admin-script.js"></script>
 </body>
 
 </html>
