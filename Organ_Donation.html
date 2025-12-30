@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MEDLink - Organ Matching Interface</title>
+    <link rel="stylesheet" href="Organ_Donation.css">
+</head>
+<body>
+
+    <header>
+        <h1>LifeLink Organ Matching Interface</h1>
+    </header>
+
+    <div class="main-container">
+        <section class="panel input-panel">
+            <h2>New Donor Organ Details</h2>
+            
+            <div class="form-group">
+                <label for="donorOrgan">Organ Type</label>
+                <select id="donorOrgan">
+                    <option value="Kidney" selected>Kidney</option>
+                    <option value="Liver">Liver</option>
+                    <option value="Heart">Heart</option>
+                    <option value="Lungs">Lungs</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="donorBlood">Blood Type</label>
+                <select id="donorBlood">
+                    <option value="O-">O-</option>
+                    <option value="O+">O+</option>
+                    <option value="A-">A-</option>
+                    <option value="A+" selected>A+</option>
+                    <option value="B-">B-</option>
+                    <option value="B+">B+</option>
+                    <option value="AB-">AB-</option>
+                    <option value="AB+">AB+</option>
+                </select>
+            </div>
+
+            <button id="findMatchBtn">Run Matching Algorithm</button>
+        </section>
+
+        <section class="panel results-panel">
+            <h2>Recipient Waiting List</h2>
+            <div class="results-table-container">
+                <table id="recipientTable">
+                    <thead>
+                        <tr>
+                            <th style="width: 70%;">Name</th>
+                            <th style="width: 30%;">Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="recipientListBody">
+                        </tbody>
+                </table>
+            </div>
+        </section>
+    </div>
+
+    <script src="Organ_Donation.js"></script>
+</body>
+</html>
