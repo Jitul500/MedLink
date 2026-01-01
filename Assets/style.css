@@ -1,0 +1,29 @@
+body { 
+    font-family: Arial; 
+    margin: 20px; 
+}
+h1, h2 { 
+    color: #333;
+ }
+table { 
+    width: 100%; 
+    border-collapse: collapse;
+     margin-top: 10px; 
+    }
+table, th, td { 
+    border: 1px solid #333; 
+}
+
+th, td { 
+    padding: 10px; 
+}
+
+input, button { 
+    padding: 5px; 
+    margin: 5px 0;
+ }
+
+a { 
+    margin-right: 10px; 
+}
+
