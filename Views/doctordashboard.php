@@ -25,6 +25,13 @@ if ($_SESSION['role'] !== 'doctor') {
     <p>This is the <strong>Doctor's Portal</strong>.</p>
     <p>Your Role: <span style="color: green; font-weight: bold;"><?php echo $_SESSION['role']; ?></span></p>
 
+    <div style="margin: 20px 0;">
+      <a href="Organ_Donation.php"
+        style="background-color: #007bff; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; font-weight: bold;">
+        Go to Organ Donation Panel
+      </a>
+    </div>
+
     <a href="../Controllers/logout.php" class="btn-logout">Logout</a>
   </div>
 
