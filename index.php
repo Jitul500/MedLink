@@ -1,28 +1,69 @@
-<?php
-session_start();
-
-if(isset($_SESSION['role'])){
-    if($_SESSION['role'] == 'doctor'){
-        header("Location: views/doctor/dashboard.php");
-        exit();
-    } elseif($_SESSION['role'] == 'patient'){
-        header("Location: views/patient/dashboard.php");
-        exit();
-    }
-}
-?>
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-    <title>Healthcare System</title>
-    <link rel="stylesheet" href="assets/css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MedLink - Home</title>
+    <link rel="stylesheet" href="Assets/style.css">
 </head>
+
 <body>
-    <h1>Welcome to Healthcare System</h1>
-    <p>Please choose an option:</p>
-    
-    <a href="views/auth/register.php"><button>Register</button></a>
-    <a href="views/auth/login.php"><button>Login</button></a>
+
+    <div class="menu">
+    <div class="main-box">
+    <div class="logo">MEDLINK</div>
+    <div class="nav-links">
+    <a href="Views/patientlogin.php" class="login-btn">Login</a>
+    </div>
+    </div>
+    </div>
+
+    <div class="banner">
+    <div class="main-box">
+        <h1>Welcome to MedLink</h1>
+        <p>Your secure health management system.</p>
+        <br>
+        <a href="Views/patientlogin.php" class="green-btn">Get Started</a>
+
+        <div class="big-icon">
+            👨‍⚕️
+        </div>
+        </div>
+    </div>
+
+    <div class="features">
+    <div class="main-box">
+        <h2>Our Features</h2>
+
+        <div class="row">
+
+        <div class="card">
+            <div class="symbol">📝</div>
+            <h3>Digital Records</h3>
+            <p>Keep your health data safe.</p>
+        </div>
+
+        <div class="card">
+            <div class="symbol">🛡️</div>
+            <h3>Secure Data</h3>
+            <p>100% Privacy protection.</p>
+        </div>
+
+        <div class="card">
+        <div class="symbol">💻</div>
+        <h3>Remote Access</h3>
+        <p>Access from anywhere.</p>
+        </div>
+
+        </div>
+        </div>
+    </div>
+
+ <div class="footer">
+    <p>&copy; 2025 MedLink. All rights reserved.</p>
+ </div>
+
 </body>
+
 </html>

@@ -18,6 +18,9 @@ require_once '../Controllers/adminController.php';
     <a href="?page=dashboard" class="<?php echo $page == 'dashboard' ? 'active' : ''; ?>">Dashboard</a>
     <a href="?page=doctors" class="<?php echo $page == 'doctors' ? 'active' : ''; ?>">Manage Doctors</a>
     <a href="?page=patients" class="<?php echo $page == 'patients' ? 'active' : ''; ?>">Manage Patients</a>
+    
+    <a href="Organ_Donation.php">Organ Donation</a>
+    
     <a href="../Controllers/logout.php" class="logout-btn">Logout</a>
   </div>
 
@@ -61,7 +64,7 @@ require_once '../Controllers/adminController.php';
          <option value="Male" <?php echo ($edit_data['gender'] ?? '') == 'Male' ? 'selected' : ''; ?>>Male</option>
         <option value="Female" <?php echo ($edit_data['gender'] ?? '') == 'Female' ? 'selected' : ''; ?>>Female
          </option>
-       </select>
+        </select>
       <input type="text" name="specialty" class="form-input" placeholder="Specialty"
         value="<?php echo $edit_data['specialty'] ?? ''; ?>" required>
        <input type="text" name="password" class="form-input" placeholder="Password"
@@ -75,7 +78,7 @@ require_once '../Controllers/adminController.php';
     <?php if ($edit_data): ?>
    <a href="?page=doctors" class="btn-cancel">Cancel</a>
     <?php endif; ?>
-     </form>
+      </form>
    </div>
 
   <div class="card" style="overflow-x: auto;">
