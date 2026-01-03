@@ -1,36 +1,47 @@
 <?php
 session_start();
-if(isset(($_POST['submit']))) {
+require_once '../Models/userModel.php';
+
+if (isset($_POST['submit'])) {
+
     $username = $_POST['username'];
     $password = $_POST['password'];
-
     $remember = isset($_POST['remember']);
-    // Dummy credentials for demonstration
-    $valid_username = "user";
-    $valid_password = "pass";
 
-    if($username == "null" || $password == "") {
-        echo "Username or Password cannot be null.";
-    } else {
-        if($username === $valid_username && $password === $valid_password) {
+    if (empty($username) || empty($password)) {
+        $_SESSION['error_msg'] = "Username and Password cannot be empty.";
+        header("Location: ../Views/patientlogin.php");
+        exit();
+    }
+
+    $user_input = [
+        'username' => $username,
+        'password' => $password
+    ];
+
+    $user_data = login($user_input);
+
+    if ($user_data != false && $user_data['role'] === 'patient') {
+
         $_SESSION['loggedin'] = true;
         $_SESSION['username'] = $username;
-        if($remember) {
-                setcookie('status', 'true', time() + 3000, '/');
-            }
-        header("Location: ../Views/test.php");
-        exit();
-        }else {
+        $_SESSION['role'] = 'patient'; 
 
-            echo "Invalid username or password.";
+        if ($remember) {
+            setcookie('auth_user', $username, time() + 3600, '/');
         }
-    } 
 
-    }else{
-        header("Location: ../Views/login.php");
+        header("Location: ../Views/patientdashboard.php");
         exit();
-        
-    }
- 
 
+    } else {
+        $_SESSION['error_msg'] = "Invalid Username or Password!";
+        header("Location: ../Views/patientlogin.php");
+        exit();
+    }
+
+} else {
+    header("Location: ../Views/patientlogin.php");
+    exit();
+}
 ?>

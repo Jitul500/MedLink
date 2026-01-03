@@ -1,19 +1,17 @@
 <?php
 session_start();
 
-if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
-   
-} 
+if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
 
-elseif (isset($_COOKIE['status']) && $_COOKIE['status'] === 'true') {
-    
-    $_SESSION['loggedin'] = true;
-    $_SESSION['username'] = "user"; 
-    
-} 
+    if (isset($_COOKIE['auth_user'])) {
 
-else {
-    header("Location: ../Views/login.php");
-    exit();
+        $_SESSION['loggedin'] = true;
+        $_SESSION['username'] = $_COOKIE['auth_user'];
+        $_SESSION['role'] = 'patient'; 
+
+    } else {
+        header("Location: ../Views/patientlogin.php");
+        exit();
+    }
 }
 ?>

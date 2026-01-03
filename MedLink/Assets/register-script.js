@@ -1,58 +1,30 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const registrationForm = document.getElementById('patientRegistrationForm');
+function validateForm() {
+  let phone = document.getElementById('phone').value;
+  let pass = document.getElementById('pass').value;
+  let cpass = document.getElementById('cpass').value;
+  let errorBox = document.getElementById('error-msg');
 
-  if (registrationForm) {
-    registrationForm.addEventListener('submit', (event) => {
-      event.preventDefault();
+  errorBox.innerHTML = "";
 
-      const password = document.getElementById('password').value;
-      const confirmPassword = document.getElementById('confirmPassword').value;
+  if (isNaN(phone) || phone.trim() === "") {
+    errorBox.innerHTML = "Invalid Phone Number! Only numbers allowed.";
+    return false;
+  }
 
-      // 1. Password Match Validation
-      if (password !== confirmPassword) {
-        alert('Error: Passwords do not match. Please check and try again.');
-        document.getElementById('password').focus();
-        return;
-      }
+  if (pass !== cpass) {
+    errorBox.innerHTML = "Password and Confirm Password do not match!";
+    return false; 
+  }
 
-      // 2. Terms and Conditions Check (Handled by 'required' in HTML, but good to check)
-      if (!document.getElementById('agreeTerms').checked) {
-        alert('Error: You must agree to the Terms and Conditions.');
-        return;
-      }
+  return true;
+}
 
-      // If validation passes, proceed with data collection (e.g., sending to API)
-      const formData = {
-        fullName: document.getElementById('fullName').value,
-        dob: document.getElementById('dob').value,
-        gender: document.getElementById('gender').value,
-        email: document.getElementById('email').value,
-        phone: document.getElementById('phone').value,
-        // Note: Never send plain password in a real app; hash it before submission.
-      };
+document.addEventListener("DOMContentLoaded", function () {
 
-      console.log('Registration Data:', formData);
-      alert('Registration Successful! Redirecting to login or verification page.');
+  let serverMsg = document.getElementById('php_error');
+  let errorBox = document.getElementById('error-msg');
 
-      // In a real application, you would use fetch() or axios to POST this data.
-      // window.location.href = 'login.html'; // Example redirect
-    });
+  if (serverMsg && serverMsg.value !== "") {
+    errorBox.innerHTML = serverMsg.value;
   }
 });
-
-// Function to toggle password visibility for a given field ID
-function togglePasswordVisibility(fieldId) {
-  const passwordField = document.getElementById(fieldId);
-  // Determine which icon needs to be toggled based on the fieldId
-  const toggleIcon = document.getElementById(fieldId === 'password' ? 'toggleIconPassword' : 'toggleIconConfirm');
-
-  if (passwordField.type === 'password') {
-    passwordField.type = 'text';
-    toggleIcon.classList.remove('fa-eye');
-    toggleIcon.classList.add('fa-eye-slash');
-  } else {
-    passwordField.type = 'password';
-    toggleIcon.classList.remove('fa-eye-slash');
-    toggleIcon.classList.add('fa-eye');
-  }
-}

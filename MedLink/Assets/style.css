@@ -1,4 +1,3 @@
-
 * {
     margin: 0;
     padding: 0;
@@ -7,129 +6,111 @@
 }
 
 body {
-    background-color: #f9f9f9;
-    color: #333;
+    background-color: white;
+    color: black;
 }
 
-/* কন্টেইনার */
-.container {
+
+.main-box {
     width: 80%;
     margin: 0 auto;
-    text-align: center; 
+    text-align: center;
 }
 
 
-.navbar {
-    background-color: white;
+.menu {
+    background-color: whitesmoke;
     padding: 15px 0;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid lightgrey;
 }
 
-
-.navbar .container {
-    display: flex;             
-    justify-content: space-between; 
-    align-items: center;       
+.menu .main-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .logo {
-    font-size: 24px;
+    font-size: 22px;
     font-weight: bold;
-    color: #007bff;
-    
+    color: blue;
 }
 
-.btn-login {
+.login-btn {
     text-decoration: none;
-    background-color: #007bff;
+    background-color: blue;
     color: white;
-    padding: 8px 20px;
-    border-radius: 4px;
-    font-size: 14px;
+    padding: 8px 15px;
+    border-radius: 5px;
 }
 
 
-.hero-section {
-    padding: 60px 0;
+.banner {
+    padding: 50px 0;
     background-color: white;
-    margin-bottom: 20px;
 }
 
-.hero-section h1 {
-    font-size: 36px;
+.banner h1 {
+    font-size: 30px;
     margin-bottom: 10px;
-    color: #222;
 }
 
-.hero-section p {
-    font-size: 16px;
-    color: #666;
-    margin-bottom: 20px;
-}
-
-.btn-main {
-    text-decoration: none;
-    background-color: #28a745;
+.green-btn {
+    text-decoration: none; 
+    background-color: green;
     color: white;
-    padding: 10px 30px;
-    border-radius: 4px;
+    padding: 10px 20px;
+    border-radius: 5px;
     font-size: 16px;
     display: inline-block;
 }
 
-.hero-icon {
-    margin-top: 40px;
-    font-size: 80px;
-    color: #007bff;
+.big-icon {
+    font-size: 60px;
+    margin-top: 20px;
 }
 
 
-.features-section {
-    padding: 40px 0;
+.features {
+    padding: 30px 0;
+    background-color: aliceblue;
 }
 
-.features-section h2 {
-    margin-bottom: 30px;
-}
-
-.feature-row {
+.row {
     display: flex;
+    gap: 15px;
     justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
 }
 
-.feature-box {
-    background: white;
-    padding: 30px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    flex: 1;
-    min-width: 200px;
-    max-width: 300px; 
+.card {
+    background-color: white;
+    padding: 20px;
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+    width: 30%;
 }
 
-.feature-box i {
-    font-size: 40px;
-    color: #007bff;
-    margin-bottom: 15px;
-}
-
-.feature-box h3 {
+.symbol {
+    font-size: 35px;
     margin-bottom: 10px;
+}
+
+.card h3 {
+    margin-bottom: 8px;
     font-size: 18px;
+    color: darkblue;
 }
 
-.feature-box p {
+.card p {
     font-size: 14px;
-    color: #555;
+    color: grey;
 }
 
-/* --- ফুটার --- */
-footer {
-    background-color: #333;
+
+.footer {
+    background-color: black;
     color: white;
-    padding: 20px 0;
     text-align: center;
-    margin-top: 40px;
+    padding: 20px 0;
+    margin-top: 20px;
 }

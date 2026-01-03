@@ -1,121 +1,77 @@
+<?php
+session_start();
+$serverError = "";
+if (isset($_SESSION['error_msg'])) {
+  $serverError = $_SESSION['error_msg'];
+  unset($_SESSION['error_msg']); 
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MedLink Patient Registration</title>
-  <link rel="stylesheet" href="../Assets/register-style.css">
-  
+  <title>Patient Registration</title>
+  <link rel="stylesheet" href="../Assets/login-style.css">
 </head>
 
 <body>
 
-  <div class="register-container">
-    <div class="register-card">
-      <div class="logo">
-        <i class="fas fa-user-plus"></i>
-        <h1>MEDLINK</h1>
-        <p>New Patient Registration</p>
-      </div>
+  <div class="login-box" style="width: 400px; margin-top: 50px; margin-bottom: 50px;">
 
-      <h2>Create Your Secure Health Account</h2>
+  <a href="patientlogin.php" class="back-btn">
+    < Back to Login</a>
 
-      <form id="patientRegistrationForm">
-
-        <div class="section-title">Personal Information</div>
-
-        <div class="input-group">
-          <label for="fullName">Full Name</label>
-          <div class="input-field">
-            <i class="fas fa-user"></i>
-            <input type="text" id="fullName" placeholder="Enter full name" required>
-          </div>
-        </div>
-
-        <div class="input-row">
-          <div class="input-group">
-            <label for="dob">Date of Birth</label>
-            <div class="input-field">
-              <i class="fas fa-calendar-alt"></i>
-              <input type="date" id="dob" required>
-            </div>
-          </div>
-
-          <div class="input-group">
-            <label for="gender">Gender</label>
-            <div class="input-field">
-              <i class="fas fa-venus-mars"></i>
-              <select id="gender" required>
-                <option value="" disabled selected>Select Gender</option>
-                <option value="male">Male</option>
-                <option value="female">Female</option>
-                <option value="other">Other</option>
-              </select>
-            </div>
-          </div>
-        </div>
-
-        <div class="section-title">Contact & Security</div>
-
-        <div class="input-group">
-          <label for="email">Email Address</label>
-          <div class="input-field">
-            <i class="fas fa-envelope"></i>
-            <input type="email" id="email" placeholder="Enter valid email address" required>
-          </div>
-        </div>
-
-        <div class="input-group">
-          <label for="phone">Phone Number</label>
-          <div class="input-field">
-            <i class="fas fa-phone"></i>
-            <input type="tel" id="phone" placeholder="e.g., +880XXXXXXXXXX" required>
-          </div>
-        </div>
-
-        <div class="input-group">
-          <label for="password">Create Password</label>
-          <div class="input-field password-field">
-            <i class="fas fa-lock"></i>
-            <input type="password" id="password" placeholder="Minimum 8 characters" required minlength="8">
-            <span class="toggle-password" onclick="togglePasswordVisibility('password')">
-              <i class="fas fa-eye" id="toggleIconPassword"></i>
-            </span>
-          </div>
-        </div>
-
-        <div class="input-group">
-          <label for="confirmPassword">Confirm Password</label>
-          <div class="input-field password-field">
-            <i class="fas fa-lock"></i>
-            <input type="password" id="confirmPassword" placeholder="Re-enter password" required>
-            <span class="toggle-password" onclick="togglePasswordVisibility('confirmPassword')">
-              <i class="fas fa-eye" id="toggleIconConfirm"></i>
-            </span>
-          </div>
-        </div>
-
-        <div class="actions">
-          <div class="terms">
-            <input type="checkbox" id="agreeTerms" required>
-            <label for="agreeTerms">I agree to the <a href="#">Terms and Conditions</a> and <a href="#">Privacy
-                Policy</a>.</label>
-          </div>
-        </div>
-
-        <button type="submit" class="btn-register">
-          <i class="fas fa-arrow-alt-circle-right"></i> Register Account
-        </button>
-      </form>
-
-      <div class="login-link">
-        Already have an account? <a href="login.php">Login Here</a>
-      </div>
+    <div class="header">
+      <h1>Create Account</h1>
     </div>
+
+  <form action="../Controllers/signupCheck.php" method="post" onsubmit="return validateForm()">
+
+  <input type="hidden" id="php_error" value="<?php echo $serverError; ?>">
+
+  <label>Username</label>
+  <input type="text" name="username" required>
+
+  <label>Full Name</label>
+  <input type="text" name="name" required>
+
+  <label>Email</label>
+  <input type="email" name="email" required>
+
+  <label>Phone Number</label>
+  <input type="text" id="phone" name="phone" required>
+
+  <label>Gender</label>
+  <select name="gender" required>
+  <option value="" disabled selected>Select Your Gender</option>
+
+  <option value="Male">Male</option>
+  <option value="Female">Female</option>
+  <option value="Other">Other</option>
+  </select>
+
+  <label>Password</label>
+  <input type="password" id="pass" name="password" required>
+
+  <label>Confirm Password</label>
+  <input type="password" id="cpass" name="cpassword" required>
+
+  <p id="error-msg" style="color: red; font-size: 14px; text-align: center; margin: 10px 0;"></p>
+
+  <button type="submit" name="signup" class="login-btn">Register</button>
+
+  </form>
+
+  <div class="footer-links" style="text-align: center; margin-top: 15px;">
+  <p>Already have an account? <a href="patientlogin.php">Login Here</a></p>
+  </div>
+
   </div>
 
   <script src="../Assets/register-script.js"></script>
+
 </body>
 
 </html>

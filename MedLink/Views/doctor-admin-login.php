@@ -1,70 +1,70 @@
+<?php
+session_start();
+$err = "";
+if (isset($_SESSION['error_msg'])) {
+  $err = $_SESSION['error_msg'];
+  unset($_SESSION['error_msg']);
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MedLink Provider Login</title>
-  <link rel="stylesheet" href="../Assets/doctor-admin-style.css">
-  
+  <title>Doctor & Admin Login</title>
+  <link rel="stylesheet" href="../Assets/login-style.css">
 </head>
 
 <body>
 
-  <div class="login-container">
-    <div class="login-card">
-      <div class="logo">
-        <i class="fas fa-stethoscope"></i>
-        <h1>MEDLINK PRO</h1>
-        <p>Provider & Administration Access</p>
+  <div class="login-box">
+
+  <a href="../index.php" class="back-btn">
+    < Back</a>
+
+      <div class="header">
+        <h1>MEDLINK</h1>
+        <p>Administrative Portal</p>
       </div>
 
-      <h2>Sign In to the Professional Portal</h2>
+    <form action="../Controllers/adminLoginCheck.php" method="post">
 
-      <form id="providerLoginForm">
-        <div class="input-group">
-          <label for="id">Employee ID or License Number</label>
-          <div class="input-field">
-            <i class="fas fa-id-card-alt"></i>
-            <input type="text" id="id" placeholder="Enter ID or license number" required>
-          </div>
-        </div>
+      <label>Username</label>
+      <input type="text" name="username" placeholder="Enter Username" required>
 
-        <div class="input-group">
-          <label for="password">Password</label>
-          <div class="input-field">
-            <i class="fas fa-key"></i>
-            <input type="password" id="password" placeholder="Enter your password" required>
-            <span class="toggle-password" onclick="togglePasswordVisibility()">
-              <i class="fas fa-eye" id="toggleIcon"></i>
-            </span>
-          </div>
-        </div>
+      <label>Password</label>
+      <input type="password" name="password" placeholder="Enter Password" required>
 
-        <div class="actions">
-          <div class="remember-me">
-            <input type="checkbox" id="remember">
-            <label for="remember">Remember Me</label>
-          </div>
-          <a href="#" class="forgot-password">Need Help Logging In?</a>
-        </div>
-
-        <button type="submit" class="btn-login">
-          <i class="fas fa-sign-in-alt"></i> Access Portal
-        </button>
-      </form>
-
-      <div class="support-link">
-        <a href="#">Contact IT Support</a>
-      </div>
-
-      <div class="patient-link">
-        <a href="login.php">Looking for Patient Login?</a>
-      </div>
+    <div class="options">
+    <div>
+    <input type="checkbox" name="remember" id="remember">
+    <label for="remember">Remember Me</label>
     </div>
+    </div>
+
+  <p id="message-box" style="text-align: center; margin-bottom: 10px; font-size: 14px; min-height: 20px;"></p>
+
+  <button type="submit" name="submit" class="login-btn">Access Portal</button>
+
+ </form>
+
+  <div class="footer-links">
+  <p><a href="patientlogin.php" class="small-link">Go to Patient Login</a></p>
   </div>
 
-  <script src="../Assets/doctor-admin-script.js"></script>
+  </div>
+
+  <script>
+  let errorMsg = "<?php echo $err; ?>";
+  let msgBox = document.getElementById('message-box');
+
+  if (errorMsg !== "") {
+    msgBox.style.color = "red";
+    msgBox.innerHTML = errorMsg;
+  }
+  </script>
+
 </body>
 
 </html>
