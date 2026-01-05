@@ -1,0 +1,116 @@
+:root {
+    --primary: #0d6efd;
+    --primary-dark: #084298;
+    --bg: #f4f7fb;
+    --card: #ffffff;
+    --text: #212529;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+}
+
+header {
+    background: var(--primary);
+    color: white;
+    padding: 16px 30px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 30px auto;
+    padding: 20px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: var(--card);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    transition: transform 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card h3 {
+    margin: 0;
+    color: var(--primary);
+}
+
+.card p {
+    margin: 6px 0;
+}
+
+
+.btn {
+    width: 100%;
+    padding: 10px;
+    background: var(--primary);
+    border: none;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 15px;
+    margin-top: 10px;
+}
+
+.btn:hover {
+    background: var(--primary-dark);
+}
+
+
+.form-card {
+    max-width: 500px;
+    margin: auto;
+}
+
+label {
+    display: block;
+    margin-top: 12px;
+    font-weight: bold;
+}
+
+input {
+    width: 100%;
+    padding: 9px;
+    margin-top: 6px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+
+.success {
+    margin-top: 15px;
+    background: #d1e7dd;
+    color: #0f5132;
+    padding: 10px;
+    border-radius: 6px;
+    text-align: center;
+}
+
+footer {
+    text-align: center;
+    padding: 15px;
+    color: #777;
+    margin-top: 40px;
+}
+.doctor-card {
+    min-height: 220px;
+}
