@@ -7,21 +7,17 @@ if(isset($_POST['register'])){
     $password = $_POST['password'];
     $role = $_POST['role'];
 
-    // Simple validation
     if(empty($name) || empty($email) || empty($password) || empty($role)){
         echo "All fields are required!";
         exit();
     }
 
-    // Save session
     $_SESSION['email'] = $email;
     $_SESSION['role'] = $role;
     $_SESSION['name'] = $name;
 
-    // Cookie example
-    setcookie("last_user", $email, time() + 3600); // expires in 1 hour
+    setcookie("last_user", $email, time() + 3600); 
 
-    // Redirect based on role
     if($role == 'doctor'){
         header("Location: ../views/doctor/dashboard.php");
     } else {
