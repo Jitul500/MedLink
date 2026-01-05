@@ -1,0 +1,126 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    margin: 0;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+header {
+    background-color: #007bff;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+}
+
+header a {
+    position: absolute;
+    right: 20px;
+    top: 25px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.main-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.panel {
+    background: white;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    flex: 1;
+    min-width: 300px;
+  
+}
+
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="text"],
+select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 4px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+th,
+td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+}
+
+th {
+    background-color: #eee;
+}
+
+
+.matched-row {
+    background-color: #d1e7dd !important;
+
+}
+
+.crud-panel {
+    border-left: 5px solid #28a745;
+
+}
+
+
+.btn-edit,
+.btn-del {
+    padding: 5px 10px;
+    text-decoration: none;
+    border-radius: 3px;
+    font-size: 12px;
+    color: white;
+}
+
+.btn-edit {
+    background-color: #ffc107;
+    color: black;
+}
+
+.btn-del {
+    background-color: #dc3545;
+}
