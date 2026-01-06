@@ -53,7 +53,7 @@ if (isset($_POST['signup'])) {
                 'profile_pic' => $newFileName 
             ];
 
-            // ৫. মডেল ফাংশন কল করা
+            
             $status = addUser($user);
 
             if ($status) {
