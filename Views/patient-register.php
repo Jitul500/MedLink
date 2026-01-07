@@ -20,8 +20,8 @@ if (isset($_SESSION['error_msg'])) {
 
   <div class="login-box" style="width: 400px; margin-top: 50px; margin-bottom: 50px;">
 
-    <a href="patientlogin.php" class="back-btn">
-      < Back to Login</a>
+    <a href="login.php" class="back-btn">
+      < Back</a>
 
         <div class="header">
           <h1>Create Account</h1>
@@ -68,7 +68,7 @@ if (isset($_SESSION['error_msg'])) {
         </form>
 
         <div class="footer-links" style="text-align: center; margin-top: 15px;">
-          <p>Already have an account? <a href="patientlogin.php">Login Here</a></p>
+          <p>Already have an account? <a href="login.php">Login Here</a></p>
         </div>
 
   </div>

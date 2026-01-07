@@ -13,14 +13,13 @@ function validateForm() {
 
   if (pass !== cpass) {
     errorBox.innerHTML = "Password and Confirm Password do not match!";
-    return false; 
+    return false;
   }
 
   return true;
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-
   let serverMsg = document.getElementById('php_error');
   let errorBox = document.getElementById('error-msg');
 

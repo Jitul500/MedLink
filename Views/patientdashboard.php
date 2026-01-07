@@ -19,19 +19,7 @@ $profilePic = isset($_SESSION['profile_pic']) && !empty($_SESSION['profile_pic']
   <meta charset="UTF-8">
   <title>Patient Dashboard</title>
   <link rel="stylesheet" href="../Assets/patientdashboard-style.css">
-  <style>
-    .profile-img {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 4px solid #00796b;
-      margin-bottom: 15px;
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-    }
-  </style>
+  
 </head>
 
 <body>

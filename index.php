@@ -14,7 +14,7 @@
     <div class="main-box">
     <div class="logo">MEDLINK</div>
     <div class="nav-links">
-    <a href="Views/patientlogin.php" class="login-btn">Login</a>
+    <a href="Views/login.php" class="login-btn">Login</a>
     </div>
     </div>
     </div>
@@ -24,7 +24,7 @@
         <h1>Welcome to MedLink</h1>
         <p>Your secure health management system.</p>
         <br>
-        <a href="Views/patientlogin.php" class="green-btn">Get Started</a>
+        <a href="Views/login.php" class="green-btn">Get Started</a>
 
         <div class="big-icon">
             👨‍⚕️

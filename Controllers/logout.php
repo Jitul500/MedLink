@@ -9,7 +9,7 @@ if(isset($_COOKIE['auth_user'])) {
     setcookie('auth_user', '', time() - 10, '/');
 }
 
-header("Location: ../index.php");
+header("Location: ../Views/login.php");
 
 exit();
 ?>

@@ -10,7 +10,7 @@ if (isset($_POST['submit'])) {
 
     if (empty($username) || empty($password)) {
         $_SESSION['error_msg'] = "Username and Password cannot be empty.";
-        header("Location: ../Views/patientlogin.php");
+        header("Location: ../Views/login.php"); // এখানে patientlogin.php ছিল, যা ভুল
         exit();
     }
 
@@ -19,30 +19,46 @@ if (isset($_POST['submit'])) {
         'password' => $password
     ];
 
+    // ডাটাবেস চেক করা
     $user_data = login($user_input);
 
-    if ($user_data != false && $user_data['role'] === 'patient') {
+    // ১. শুধু চেক করব ডাটা পাওয়া গেছে কিনা (রোল এখানে চেক করব না)
+    if ($user_data != false) {
 
+        // সেশন সেট করা
         $_SESSION['loggedin'] = true;
-        $_SESSION['username'] = $username;
-        $_SESSION['role'] = 'patient';
+        $_SESSION['username'] = $user_data['username'];
+        $_SESSION['id'] = $user_data['id'];
+        $_SESSION['role'] = $user_data['role']; // রোল সেশনে রাখা হলো
         $_SESSION['profile_pic'] = isset($user_data['profile_pic']) ? $user_data['profile_pic'] : 'default.png';
 
+        // কুকি সেট করা
         if ($remember) {
             setcookie('auth_user', $username, time() + 3600, '/');
         }
 
-        header("Location: ../Views/patientdashboard.php");
+        // ২. রোল অনুযায়ী রিডাইরেক্ট করা (স্মার্ট লজিক)
+        if ($user_data['role'] == 'admin') {
+            header("Location: ../Views/admindashboard.php");
+        } elseif ($user_data['role'] == 'doctor') {
+            header("Location: ../Views/doctordashboard.php");
+        } elseif ($user_data['role'] == 'receptionist') { 
+            header("Location: ../Views/receptionistdashboard.php");
+        } else {
+            
+            header("Location: ../Views/patientdashboard.php");
+        }
         exit();
 
     } else {
+        
         $_SESSION['error_msg'] = "Invalid Username or Password!";
-        header("Location: ../Views/patientlogin.php");
+        header("Location: ../Views/login.php");
         exit();
     }
 
 } else {
-    header("Location: ../Views/patientlogin.php");
+    header("Location: ../Views/login.php");
     exit();
 }
 ?>
