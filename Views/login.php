@@ -5,11 +5,11 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
   if ($_SESSION['role'] == 'admin') {
     header("Location: admindashboard.php");
   } elseif ($_SESSION['role'] == 'doctor') {
-    header("Location: doctordashboard.php");
+    header("Location: doctor/dashboard.php");
   }elseif ($_SESSION['role'] == 'receptionist') {
     header("Location: receptionistdashboard.php");
   }else {
-    header("Location: patientdashboard.php");
+    header("Location: patient/dashboard.php");
   }
   exit();
 }

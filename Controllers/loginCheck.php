@@ -26,7 +26,7 @@ if (isset($_POST['submit'])) {
         $_SESSION['loggedin'] = true;
         $_SESSION['username'] = $user_data['username'];
         $_SESSION['id'] = $user_data['id'];
-        $_SESSION['role'] = $user_data['role']; // রোল সেশনে রাখা হলো
+        $_SESSION['role'] = $user_data['role']; 
         $_SESSION['profile_pic'] = isset($user_data['profile_pic']) ? $user_data['profile_pic'] : 'default.png';
 
         if ($remember) {
@@ -36,12 +36,12 @@ if (isset($_POST['submit'])) {
         if ($user_data['role'] == 'admin') {
             header("Location: ../Views/admindashboard.php");
         } elseif ($user_data['role'] == 'doctor') {
-            header("Location: ../Views/doctordashboard.php");
+            header("Location: ../Views/doctor/dashboard.php");
         } elseif ($user_data['role'] == 'receptionist') { 
             header("Location: ../Views/receptionistdashboard.php");
         } else {
             
-            header("Location: ../Views/patientdashboard.php");
+            header("Location: ../Views/patient/dashboard.php");
         }
         exit();
 
