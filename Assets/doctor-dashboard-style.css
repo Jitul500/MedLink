@@ -1,6 +1,4 @@
-/* ===========================
-   1. GLOBAL RESET & VARIABLES
-   =========================== */
+
 * {
     margin: 0;
     padding: 0;
@@ -11,21 +9,19 @@
 body {
     display: flex;
     min-height: 100vh;
-    background-color: #f4f6f9; /* Light grey background */
+    background-color: #f4f6f9;
     color: #333;
 }
 
-/* ===========================
-   2. SIDEBAR STYLES
-   =========================== */
+
 .sidebar {
     width: 250px;
-    background-color: #2c3e50; /* Dark Blue */
+    background-color: #2c3e50; 
     color: white;
     display: flex;
     flex-direction: column;
     padding: 20px;
-    position: fixed; /* Fixed sidebar */
+    position: fixed; 
     height: 100%;
     left: 0;
     top: 0;
@@ -60,16 +56,14 @@ body {
 }
 
 .menu a.active {
-    background-color: #1abc9c; /* Green accent */
+    background-color: #1abc9c; 
     font-weight: bold;
 }
 
-/* ===========================
-   3. MAIN CONTENT AREA
-   =========================== */
+
 .main-content {
     flex: 1;
-    margin-left: 250px; /* Same as sidebar width */
+    margin-left: 250px; 
     padding: 30px;
     overflow-y: auto;
 }
@@ -88,9 +82,7 @@ header p {
     margin-top: 5px;
 }
 
-/* ===========================
-   4. DASHBOARD CARDS (STATS)
-   =========================== */
+
 .dashboard-cards {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -124,9 +116,7 @@ header p {
     color: #2c3e50;
 }
 
-/* ===========================
-   5. QUICK ACTIONS
-   =========================== */
+
 .quick-actions {
     display: flex;
     gap: 15px;
@@ -148,9 +138,7 @@ header p {
     background-color: #2980b9;
 }
 
-/* ===========================
-   6. TABLES & PANELS
-   =========================== */
+
 .panel {
     background: white;
     padding: 20px;
@@ -187,9 +175,7 @@ table tr:hover {
     background-color: #f1f2f6;
 }
 
-/* ===========================
-   7. STATUS BADGES
-   =========================== */
+
 .status {
     padding: 5px 10px;
     border-radius: 20px;
@@ -214,9 +200,7 @@ table tr:hover {
     color: #721c24;
 }
 
-/* ===========================
-   8. FORMS (Booking & Receptionist)
-   =========================== */
+
 .booking-form {
     background: #fff;
     border-radius: 8px;
@@ -266,17 +250,15 @@ table tr:hover {
     background-color: #16a085;
 }
 
-/* ===========================
-   9. RESPONSIVE DESIGN (Mobile)
-   =========================== */
+
 @media (max-width: 768px) {
     .sidebar {
-        width: 70px; /* Shrink sidebar */
+        width: 70px; 
         padding: 10px;
     }
 
     .sidebar h1 {
-        display: none; /* Hide title */
+        display: none; 
     }
 
     .menu a {
@@ -291,6 +273,7 @@ table tr:hover {
     }
 
     .dashboard-cards {
-        grid-template-columns: 1fr; /* Stack cards */
+        grid-template-columns: 1fr; 
     }
+
 }
