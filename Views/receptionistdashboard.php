@@ -1,20 +1,19 @@
 <?php
 session_start();
 
-// ১. এখানে আমরা সরাসরি db.php কল না করে userModel.php কল করব
-// userModel.php এর ভেতরেই ডাটাবেস কানেকশন হ্যান্ডেল করা আছে
+
+
 require_once '../Models/userModel.php'; 
 
-// ২. সিকিউরিটি চেক
+
 if (!isset($_SESSION['role']) || $_SESSION['role'] != 'receptionist') {
     echo "Unauthorized access! <a href='../auth/login.php'>Login</a>";
     exit();
 }
 
-// ৩. userModel.php এর ফাংশন ব্যবহার করে ডাটা আনা হচ্ছে
-// নোট: এখানে কোনো $conn প্রয়োজন নেই, কারণ getUsersByRole() ফাংশনটি নিজেই কানেকশন তৈরি করে ডাটা নিয়ে আসবে
-$patients = getUsersByRole('patient'); // সকল পেশেন্ট এর লিস্ট
-$doctors = getUsersByRole('doctor');   // সকল ডাক্তার এর লিস্ট
+
+$patients = getUsersByRole('patient');
+$doctors = getUsersByRole('doctor');   
 
 ?>
 
@@ -108,7 +107,7 @@ $doctors = getUsersByRole('doctor');   // সকল ডাক্তার এর
                 <select name="patient_id" id="patient_id" required>
                     <option value="">-- Choose a Patient --</option>
                     <?php 
-                    // userModel থেকে পাওয়া $patients অ্যারে লুপ করা হচ্ছে
+        ে
                     if (!empty($patients)) {
                         foreach ($patients as $patient) {
                             echo '<option value="'.$patient['id'].'">'.$patient['name'].' (ID: '.$patient['id'].')</option>';
@@ -125,7 +124,7 @@ $doctors = getUsersByRole('doctor');   // সকল ডাক্তার এর
                 <select name="doctor_id" id="doctor_id" required>
                     <option value="">-- Choose a Doctor --</option>
                     <?php 
-                    // userModel থেকে পাওয়া $doctors অ্যারে লুপ করা হচ্ছে
+                    ে
                     if (!empty($doctors)) {
                         foreach ($doctors as $doctor) {
                             $specialty = !empty($doctor['specialty']) ? $doctor['specialty'] : 'General';
@@ -183,4 +182,5 @@ $doctors = getUsersByRole('doctor');   // সকল ডাক্তার এর
 </main>
 
 </body>
+
 </html>
