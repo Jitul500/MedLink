@@ -1,0 +1,151 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Segoe UI, Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #e6f0f8;
+  color: #34495e;
+}
+
+.sidebar {
+  width: 220px;
+  height: 100vh;
+  background-color: #ffffff;
+  border-right: 1px solid #d4e3f4;
+  padding: 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow-y: auto;
+  z-index: 10;
+}
+
+.sidebar h1 {
+  font-size: 24px;
+  color: #0056b3;
+  margin-top: 10px;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.menu a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 10px;
+  margin-bottom: 10px;
+  text-decoration: none;
+  color: #34495e;
+  font-weight: 500;
+  border-radius: 8px;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.menu a:hover,
+.menu a.active {
+  background-color: #0056b3;
+  color: #ffffff;
+}
+
+
+.main-content {
+  flex: 1;
+  padding: 20px;
+}
+
+
+header {
+ margin-top: 5px;
+  margin-left: 350px;
+  height: 80px;
+ width: 600px;
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 14px;
+  box-shadow: 0 6px 25px rgba(0,0,0,0.08);
+  margin-bottom: 30px;
+}
+
+header h1 {
+  font-size: 25px;
+}
+
+.profile-card {
+  margin-left: 350px;
+  padding: 30px;
+  width: 600px;
+  background-color: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 6px 25px rgba(0,0,0,0.12);
+  overflow: hidden;
+}
+
+.profile-header {
+  background: linear-gradient(135deg, #007bff, #0056b3);
+  color: #ffffff;
+  text-align: center;
+  padding: 35px 20px;
+}
+
+.avatar {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  color: #007bff;
+  font-size: 36px;
+  font-weight: bold;
+  line-height: 90px;
+  margin: 0 auto 15px;
+}
+
+.profile-body {
+  padding: 25px;
+}
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 14px 16px;
+  background-color: #f0f4f9;
+  border-radius: 6px;
+  margin-bottom: 15px;
+}
+
+.label {
+  font-weight: 600;
+}
+
+.value {
+  color: #007bff;
+}
+
+.profile-footer {
+  padding: 20px;
+  text-align: center;
+}
+
+.btn {
+  display: inline-block;
+  width: 45%;
+  padding: 12px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  margin: 5px;
+}
+
+
+
+.btn.secondary {
+  background-color: #007bff;
+  color: #ffffff;
+}
+
+
+.btn.secondary:hover {
+  background-color: #0056b3;
+}
