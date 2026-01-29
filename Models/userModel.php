@@ -4,8 +4,10 @@ require_once('db.php');
 function login($user)
 {
   $con = getConnection();
+
   $sql = "select * from users where username='{$user['username']}' and password='{$user['password']}'";
   $result = mysqli_query($con, $sql);
+  
   if (mysqli_num_rows($result) == 1) {
     return mysqli_fetch_assoc($result);
   } else {
@@ -18,10 +20,10 @@ function addUser($user)
   $con = getConnection();
 
   $specialty = isset($user['specialty']) ? $user['specialty'] : '';
-  // $profile_pic = isset($user['profile_pic']) ? $user['profile_pic'] : 'default.png'; 
+  $profile_pic = isset($user['profile_pic']) ? $user['profile_pic'] : 'default.png';
 
-  $sql = "insert into users (username, name, email, phone, gender, password, role, specialty) 
-            values('{$user['username']}', '{$user['name']}', '{$user['email']}', '{$user['phone']}', '{$user['gender']}', '{$user['password']}', '{$user['role']}', '$specialty')";
+  $sql = "insert into users (username, name, email, phone, gender, password, role, specialty, profile_pic) 
+            values('{$user['username']}', '{$user['name']}', '{$user['email']}', '{$user['phone']}', '{$user['gender']}', '{$user['password']}', '{$user['role']}', '$specialty', '$profile_pic')";
 
   if (mysqli_query($con, $sql)) {
     return true;
@@ -88,23 +90,4 @@ function deleteUser($id)
     return false;
   }
 }
-
-
-
-function updateUserSettings($id, $name, $email, $password = null){
-    $con = getConnection();
-
-    if($password){
-        $sql = "UPDATE users SET name=?, email=?, password=? WHERE id=?";
-        $stmt = $con->prepare($sql);
-        $stmt->bind_param("sssi", $name, $email, $password, $id);
-    } else {
-        $sql = "UPDATE users SET name=?, email=? WHERE id=?";
-        $stmt = $con->prepare($sql);
-        $stmt->bind_param("ssi", $name, $email, $id);
-    }
-
-    return $stmt->execute();
-}
-
 ?>
